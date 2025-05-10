@@ -3,23 +3,29 @@
 
 int main() {
     char str[100];
-    int fre[256] = {0}; 
-    int i;
+    int i, j, len, count;
+    int visited[100] = {0};
 
     printf("Input: Enter any string: ");
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str, "\n")] = '\0'; 
+    gets(str); // Simple input method (OK for learning purpose)
 
-   
-    for (i = 0; str[i] != '\0'; i++) {
-        fre[(unsigned char)str[i]]++;
-    }
+    len = strlen(str);
 
-    printf("Output:\n\nFrequency of each letter:\n");
-    for (i = 0; i < 256; i++) {
-        if (fre[i] > 0) {
-            printf("%c => %d\n", i, fre[i]);
+    printf("Output:\nFrequency of each letter:\n");
+
+    for (i = 0; i < len; i++) {
+        if (visited[i] == 1)
+            continue;
+
+        count = 1;
+        for (j = i + 1; j < len; j++) {
+            if (str[i] == str[j]) {
+                count++;
+                visited[j] = 1;
+            }
         }
+
+        printf("%c => %d\n", str[i], count);
     }
 
 }
