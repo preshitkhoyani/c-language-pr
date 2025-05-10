@@ -1,31 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main() 
+{
+	
     char str[100];
-    int i, j, len, count;
-    int visited[100] = {0};
+    int i, len, Pal = 1;
 
-    printf("Input: Enter any string: ");
-    gets(str); // Simple input method (OK for learning purpose)
+    printf("Enter any string: ");
+    scanf("%s", str); 
 
     len = strlen(str);
 
-    printf("Output:\nFrequency of each letter:\n");
-
-    for (i = 0; i < len; i++) {
-        if (visited[i] == 1)
-            continue;
-
-        count = 1;
-        for (j = i + 1; j < len; j++) {
-            if (str[i] == str[j]) {
-                count++;
-                visited[j] = 1;
-            }
+    for (i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1]) {
+            Pal = 0;
         }
+    }
 
-        printf("%c => %d\n", str[i], count);
+    if (Pal) {
+        printf("The given string is a Palindrome.\n");
+    } else {
+        printf("The given string is not a Palindrome.\n");
     }
 
 }
+
+//
+//		true
+//Enter any string: pop
+//The given string is a Palindrome.
+//
+//
+//		false
+//Enter any string: poppp
+//The given string is not a Palindrome.
