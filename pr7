@@ -20,7 +20,7 @@ float d(int a, int b)
     if(b!=0){
         return (float)a/b;
     }else{
-        printf("Division by zero is not possiable\n");
+        printf("This is not possiable\n");
         return 0;
     }
 }
@@ -31,7 +31,7 @@ int mo(int a, int b)
 }
 
 int main() {
-    int choice, x, y;
+    int choice, c, d;
     
     while(1)
 	{
@@ -57,19 +57,19 @@ int main() {
         switch (choice) 
 		{
             case 1:
-                printf("Addition of %d and %d is %d\n", x, y, add(x, y));
+                printf("Addition of %d and %d is %d\n", c, d, add(c, d));
                 break;
             case 2:
-                printf("Subtraction of %d and %d is %d\n", x, y, s(x, y));
+                printf("Subtraction of %d and %d is %d\n", c, d, s(c, d));
                 break;
             case 3:
-                printf("Multiplication of %d and %d is %d\n", x, y, m(x, y));
+                printf("Multiplication of %d and %d is %d\n", c, d, m(c, d));
                 break;
             case 4:
-                printf("Division of %d and %d is %.2f\n", x, y, d(x, y));
+                printf("Division of %d and %d is %.2f\n", c, d, d(c, d));
                 break;
             case 5:
-                printf("Modulus of %d and %d is %d\n", x, y, m(x, y));
+                printf("Modulus of %d and %d is %d\n", c, d, m(c, d));
                 break;
             default:
                 printf("choise not found.\n");
