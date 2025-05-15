@@ -1,37 +1,37 @@
 #include <stdio.h>
 
-int add(int a, int b) 
+int z(int a, int b) 
 {
     return a+b;
 }
 
-int s(int a, int b) 
+int q(int a, int b) 
 {
     return a-b;
 }
 
-int m(int a, int b) 
+int c(int a, int b) 
 {
     return a*b;
 }
 
-float d(int a, int b) 
+float v(int a, int b) 
 {
     if(b!=0){
         return (float)a/b;
     }else{
-        printf("This is not possiable\n");
+        printf("Division of zero is not possiable\n");
         return 0;
     }
 }
 
-int mo(int a, int b) 
+int b(int a, int b) 
 {
         return a%b;
 }
 
 int main() {
-    int choice, c, d;
+    int choice, x, y;
     
     while(1)
 	{
@@ -57,22 +57,22 @@ int main() {
         switch (choice) 
 		{
             case 1:
-                printf("Addition of %d and %d is %d\n", c, d, add(c, d));
+                printf("Addition of %d and %d is %d\n", x, y, z(x, y));
                 break;
             case 2:
-                printf("Subtraction of %d and %d is %d\n", c, d, s(c, d));
+                printf("Subtraction of %d and %d is %d\n", x, y, q(x, y));
                 break;
             case 3:
-                printf("Multiplication of %d and %d is %d\n", c, d, m(c, d));
+                printf("Multiplication of %d and %d is %d\n", x, y, c(x, y));
                 break;
             case 4:
-                printf("Division of %d and %d is %.2f\n", c, d, d(c, d));
+                printf("Division of %d and %d is %.2f\n", x, y, v(x, y));
                 break;
             case 5:
-                printf("Modulus of %d and %d is %d\n", c, d, m(c, d));
+                printf("Modulus of %d and %d is %d\n", x, y, b(x, y));
                 break;
             default:
-                printf("choise not found.\n");
+                printf("choise is inviled.\n");
         }
     }
 
@@ -86,10 +86,10 @@ Press 4 for /
 Press 5 for %
 Press 0 for the exit
 
-Enter your choice: 2
-Enter the first number: 5
-Enter the second number: 2
-Subtraction of 5 and 2 is 3
+Enter your choice: 1
+Enter the first number: 1
+Enter the second number: 14
+Addition of 1 and 14 is 15
 
 Press 1 for +
 Press 2 for -
