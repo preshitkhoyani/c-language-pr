@@ -1,51 +1,46 @@
 #include <stdio.h>
 
 
-void cube(int *ptr, int size)
+void har(int *ptr, int s)
 {
-    for (int i = 0; i < size * size; i++) 
+    for (int i = 0; i < s * s; i++) 
 	{
-        printf("%d\n", (*(ptr + i)) * (*(ptr + i)) * (*(ptr + i)));
+        printf("%d\t", (*(ptr + i)) * (*(ptr + i)) * (*(ptr + i)));
     }
     printf("\n");
 }
 
 int main() 
 {
-    int size;
-    printf("Enter array's size: ");
-    scanf("%d", &size);
+    int s;
+    printf("Enter array's s: ");
+    scanf("%d", &s);
 
-    int a[size][size];
+    int a[s][s];
 
 
     printf("Enter array elements:\n");
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < s; i++) {
+        for (int j = 0; j < s; j++) {
             printf("a[%d][%d] = ", i, j);
             scanf("%d", &a[i][j]);
         }
     }
 
 
-    printf("Cubes of all elements:\n");
-    cube(&a[0][0], size);
+    printf("har of all elements:\n");
+    har(&a[0][0], s);
+
 
 
 }
-
 /*
-		Enter array's size: 2
-		Enter array elements:
-		a[0][0] = 1
-		a[0][1] = 2
-		a[1][0] = 3
-		a[1][1] = 4
-		Cubes of all elements:
-		1
-		8
-		27
-		64
+Enter array's s: 2
+Enter array elements:
+a[0][0] = 3
+a[0][1] = 2
+a[1][0] = 5
+a[1][1] = 4
+har of all elements:
+27      8       125     64
 */
-
-
