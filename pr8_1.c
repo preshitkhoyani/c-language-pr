@@ -1,30 +1,46 @@
 #include <stdio.h>
-#include<string.h>
+
+
+void har(int *ptr, int s)
+{
+    for (int i = 0; i < s * s; i++) 
+	{
+        printf("%d\t", (*(ptr + i)) * (*(ptr + i)) * (*(ptr + i)));
+    }
+    printf("\n");
+}
 
 int main() 
-
 {
-    char a[100];
-    char *p;
-    int len;
+    int s;
+    printf("Enter array's s: ");
+    scanf("%d", &s);
 
-    printf("Enter any string: ");
-    gets(a); 
+    int a[s][s];
 
-    p = a;
 
-    for (len = 0; *p != '\0'; );
-    {
-    	
-		for (*p != '\n'; p++, len++;)
-		{
-   				 printf("\nThe length of a string is: %d\n", len);
-		}
-	}
+    printf("Enter array elements:\n");
+    for (int i = 0; i < s; i++) {
+        for (int j = 0; j < s; j++) {
+            printf("a[%d][%d] = ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+
+    printf("har of all elements:\n");
+    har(&a[0][0], s);
+
 
 
 }
 /*
-Enter any string: hello world
-The length of a string is: 11
+Enter array's s: 2
+Enter array elements:
+a[0][0] = 3
+a[0][1] = 2
+a[1][0] = 5
+a[1][1] = 4
+har of all elements:
+27      8       125     64
 */
