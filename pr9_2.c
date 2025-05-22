@@ -58,7 +58,7 @@ int main()
 /*
 
 		Roll No => 121
-		Name => po
+		Name => cr7
 		Chemistry => 99
 		Mathematics => 65
 		Physics => 68
